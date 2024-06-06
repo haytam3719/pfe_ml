@@ -22,7 +22,7 @@ text = extract_text_from_image(image_path)
 #print(text)
 
 '''
-
+import os
 import cv2
 import numpy as np
 import torch
@@ -154,7 +154,9 @@ def trancher():
 
 # Main function to run the Flask app
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+
 
 
 
